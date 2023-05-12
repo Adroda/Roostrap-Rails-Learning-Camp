@@ -111,8 +111,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_11_192831) do
   end
 
   create_table "topics", force: :cascade do |t|
-    t.string "label"
-    t.string "icon"
+    t.string "name"
+    t.string "image"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
