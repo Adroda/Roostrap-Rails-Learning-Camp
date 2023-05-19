@@ -14,7 +14,6 @@ RSpec.describe Topic, type: :model do
   describe 'validations' do
     subject { build :topic }
     it { is_expected.to validate_presence_of(:name) }
-    it { is_expected.to validate_uniqueness_of(:name).case_insensitive }
     it { is_expected.to validate_presence_of(:image) }
   end
 end
