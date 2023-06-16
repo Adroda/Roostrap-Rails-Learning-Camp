@@ -13,7 +13,7 @@ describe Topic do
   subject(:topic) { FactoryBot.create(:topic) }
   it { is_expected.to be_an Topic }
   it { is_expected.to be_persisted }
-  it { expect(name).not_to be_nil }
+  it { expect(:name).not_to be_nil }
   it { should have_db_column(:name).of_type(:string) }
   it { should have_db_column(:image).of_type(:string) }
 end
