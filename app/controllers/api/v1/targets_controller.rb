@@ -5,6 +5,10 @@ module Api
         @target = Target.create!(target_params)
       end
 
+      def index
+        @targets = policy_scope(Target)
+      end
+
       private
 
       def target_params
