@@ -56,12 +56,12 @@ describe 'POST api/v1/targets/', type: :request do
         subject
         expect(response.status).to eq(failed_response)
       end
-
-      it_behaves_like 'necessary attribute', :topic_id
-      it_behaves_like 'necessary attribute', :title
-      it_behaves_like 'necessary attribute', :radius
-      it_behaves_like 'necessary attribute', :lat
-      it_behaves_like 'necessary attribute', :lng
     end
+    
+    it_behaves_like 'necessary attribute', :topic_id
+    it_behaves_like 'necessary attribute', :title
+    it_behaves_like 'necessary attribute', :radius
+    it_behaves_like 'necessary attribute', :lat
+    it_behaves_like 'necessary attribute', :lng
   end
 end
