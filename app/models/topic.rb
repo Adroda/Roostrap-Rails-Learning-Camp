@@ -9,4 +9,5 @@
 #  updated_at :datetime         not null
 #
 class Topic < ApplicationRecord
+  has_many :targets, dependent: :destroy
 end
