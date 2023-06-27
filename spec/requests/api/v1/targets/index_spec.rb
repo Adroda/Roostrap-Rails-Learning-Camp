@@ -1,5 +1,5 @@
 describe 'GET api/v1/targets', type: :request do
-  let(:user)          { create(:user) }
+  let(:user) { create(:user) }
   let!(:targets)       { create_list(:target, 10) }
   let(:first_target)   { targets.first }
   subject { get api_v1_targets_path, headers: auth_headers, as: :json }

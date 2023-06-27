@@ -57,7 +57,7 @@ describe 'POST api/v1/targets/', type: :request do
         expect(response).to be_bad_request
       end
     end
-    
+
     it_behaves_like 'necessary attribute', :topic_id
     it_behaves_like 'necessary attribute', :title
     it_behaves_like 'necessary attribute', :radius
