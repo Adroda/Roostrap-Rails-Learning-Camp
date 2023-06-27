@@ -11,6 +11,10 @@
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #
+# Indexes
+#
+#  index_targets_on_topic_id  (topic_id)
+#
 
 FactoryBot.define do
   factory :target do
