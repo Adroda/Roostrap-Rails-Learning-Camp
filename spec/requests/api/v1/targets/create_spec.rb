@@ -54,7 +54,7 @@ describe 'POST api/v1/targets/', type: :request do
 
       it 'does not return a successful response' do
         subject
-        expect(response.status).to eq(failed_response)
+        expect(response).to be_bad_request
       end
     end
     
