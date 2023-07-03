@@ -10,10 +10,12 @@
 #  lng        :float            not null
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
+#  user_id    :bigint
 #
 # Indexes
 #
 #  index_targets_on_topic_id  (topic_id)
+#  index_targets_on_user_id   (user_id)
 #
 
 FactoryBot.define do
