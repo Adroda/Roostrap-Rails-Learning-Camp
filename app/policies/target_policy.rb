@@ -1,5 +1,5 @@
 class TargetPolicy < ApplicationPolicy
   def create?
-    @user
+    @user.present?
   end
 end
