@@ -7,6 +7,10 @@ module Api
         @target.save!
       end
 
+      def index
+        @targets = policy_scope(Target)
+      end
+
       private
 
       def target_params

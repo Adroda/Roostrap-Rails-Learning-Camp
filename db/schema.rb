@@ -122,8 +122,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_12_185119) do
   end
 
   create_table "topics", force: :cascade do |t|
-    t.string "name"
-    t.string "image"
+    t.string "label"
+    t.string "icon"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -154,4 +154,5 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_12_185119) do
 
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "exception_hunter_errors", "exception_hunter_error_groups", column: "error_group_id"
+  add_foreign_key "targets", "topics"
 end

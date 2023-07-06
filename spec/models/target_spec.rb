@@ -1,3 +1,20 @@
+# == Schema Information
+#
+# Table name: targets
+#
+#  id         :bigint           not null, primary key
+#  topic_id   :bigint
+#  title      :string           not null
+#  radius     :float            not null
+#  lat        :float            not null
+#  lng        :float            not null
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
+# Indexes
+#
+#  index_targets_on_topic_id  (topic_id)
+#
 describe Target do
   subject(:target) { FactoryBot.create(:target) }
 
