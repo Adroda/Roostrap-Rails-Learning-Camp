@@ -21,5 +21,16 @@ class Target < ApplicationRecord
   acts_as_mappable
 
   belongs_to :topic
+  belongs_to :user
   validates :title, :radius, :lat, :lng, presence: true
+  validate :count_user_targets
+
+  MAX_TARGETS = 3
+
+  def count_user_targets
+    count = user.targets.count
+    if count >= MAX_TARGETS
+      errors.add(:targets, "This user already made the maximum of 3 targets")
+    end
+  end
 end

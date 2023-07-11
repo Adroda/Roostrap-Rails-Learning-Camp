@@ -18,6 +18,7 @@
 #  index_targets_on_user_id   (user_id)
 #
 describe Target do
+  subject(:user) { FactoryBot.create(:user) }
   subject(:target) { FactoryBot.create(:target) }
 
   it { is_expected.to be_an Target }
@@ -32,4 +33,29 @@ describe Target do
   it { should have_db_column(:radius).of_type(:float) }
   it { should have_db_column(:lat).of_type(:float) }
   it { should have_db_column(:lng).of_type(:float) }
+
+  describe 'target creation' do
+    context 'when user already has 3 targets' do
+      before do
+        FactoryBot.create_list(:target, 3, user_id: user.id) 
+      end
+      it 'creates a target' do
+        target = FactoryBot.build(:target, user_id: user.id)
+        expect {
+          target.save
+        }.to_not change { user.targets.count }
+      end
+    end
+    context 'when user has less than 3 targets' do
+      before do
+        FactoryBot.create_list(:target, 2, user_id: user.id) 
+      end
+      it 'creates a target' do
+        target = FactoryBot.build(:target, user_id: user.id)
+        expect {
+          target.save
+        }.to change { user.targets.count }
+      end
+    end
+  end
 end

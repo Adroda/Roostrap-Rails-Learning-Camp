@@ -156,6 +156,5 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_27_193253) do
 
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "exception_hunter_errors", "exception_hunter_error_groups", column: "error_group_id"
-  add_foreign_key "targets", "topics"
   add_foreign_key "targets", "users"
 end
