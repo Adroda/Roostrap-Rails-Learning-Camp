@@ -37,7 +37,7 @@ describe Target do
   describe 'target creation' do
     context 'when user already has 3 targets' do
       before do
-        FactoryBot.create_list(:target, 3, user_id: user.id) 
+        FactoryBot.create_list(:target, 3, user_id: user.id)
       end
       it 'creates a target' do
         target = FactoryBot.build(:target, user_id: user.id)
@@ -48,7 +48,7 @@ describe Target do
     end
     context 'when user has less than 3 targets' do
       before do
-        FactoryBot.create_list(:target, 2, user_id: user.id) 
+        FactoryBot.create_list(:target, 2, user_id: user.id)
       end
       it 'creates a target' do
         target = FactoryBot.build(:target, user_id: user.id)

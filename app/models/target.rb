@@ -29,8 +29,6 @@ class Target < ApplicationRecord
 
   def count_user_targets
     count = user.targets.count
-    if count >= MAX_TARGETS
-      errors.add(:targets, "This user already made the maximum of 3 targets")
-    end
+    errors.add(:targets, 'This user already made the maximum of 3 targets') if count >= MAX_TARGETS
   end
 end

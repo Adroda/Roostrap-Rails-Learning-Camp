@@ -38,7 +38,7 @@ class User < ApplicationRecord
 
   validates :uid, uniqueness: { scope: :provider }
 
-  has_many:targets
+  has_many :targets
 
   before_validation :init_uid
 

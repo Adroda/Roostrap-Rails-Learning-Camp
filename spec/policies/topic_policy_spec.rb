@@ -4,7 +4,7 @@ describe TopicPolicy do
   permissions :create? do
     let(:user) { create(:user) }
     let(:topic) { create(:topic) }
-    
+
     it 'denies access if user is nil' do
       expect(subject).not_to permit(nil, topic)
     end
