@@ -20,6 +20,7 @@
 
 FactoryBot.define do
   factory :target do
+    user
     topic
     title { Faker::Lorem.sentence }
     radius { Faker::Number.decimal(l_digits: 5, r_digits: 2) }
