@@ -38,6 +38,8 @@ class User < ApplicationRecord
 
   validates :uid, uniqueness: { scope: :provider }
 
+  has_many :targets
+
   before_validation :init_uid
 
   def full_name

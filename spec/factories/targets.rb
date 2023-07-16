@@ -10,14 +10,17 @@
 #  lng        :float            not null
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
+#  user_id    :bigint
 #
 # Indexes
 #
 #  index_targets_on_topic_id  (topic_id)
+#  index_targets_on_user_id   (user_id)
 #
 
 FactoryBot.define do
   factory :target do
+    user
     topic
     title { Faker::Lorem.sentence }
     radius { Faker::Number.decimal(l_digits: 5, r_digits: 2) }
