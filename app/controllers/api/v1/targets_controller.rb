@@ -11,6 +11,11 @@ module Api
         @targets = policy_scope(Target)
       end
 
+      def destroy
+        @target = current_user.targets.find(target_params[:id])
+        @target.destroy!
+      end
+
       private
 
       def target_params
